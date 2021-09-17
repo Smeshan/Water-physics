@@ -5,7 +5,8 @@
 //#define CLRSCR system("clear"); // linux
 
 // CONSTANTS
-const int WATER_MAX_LEVEL = 9;
+const int MIN_WATER_LEVEL = 1;
+const int MAX_WATER_LEVEL = 9;
 const int DIRECTIONS_COUNT = 8;
 
 const char TEXTURE = char(219);

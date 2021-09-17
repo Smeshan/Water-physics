@@ -13,7 +13,7 @@ public:
 	}
 
 	void increaseWater() {
-		if (_waterLevel < WATER_MAX_LEVEL) {
+		if (_waterLevel < MAX_WATER_LEVEL) {
 			_waterLevel++;
 		}
 		draw(this);

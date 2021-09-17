@@ -48,5 +48,6 @@
   <ItemGroup>
     <Text Include="map_1.txt" />
     <Text Include="map_2.txt" />
+    <Text Include="map_3.txt" />
   </ItemGroup>
 </Project>

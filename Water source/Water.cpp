@@ -34,7 +34,7 @@ Water::Water(const int waterSourceX,
 	: _terrainTiles(terrain->getTiles())
 	, _terrainSize (terrain->getSize())
 	, _isWaterLeveled(true)
-	, _waterLevel(1) {
+	, _waterLevel(MIN_WATER_LEVEL) {
 	Tile* waterSource = _terrainTiles[waterSourceX][waterSourceY];
 	_waterTiles.push_back(waterSource);
 	waterSource->increaseWater();
@@ -42,6 +42,7 @@ Water::Water(const int waterSourceX,
 }
 
 void Water::update(bool& isTerrainFull) {
+	// exit if no tiles left without water
 	if (_peripheryTiles.empty()) {
 		isTerrainFull = true;
 		setPosToDraw(0,21); //move the cursor
@@ -72,7 +73,7 @@ void Water::update(bool& isTerrainFull) {
 	lowerTile->increaseWater();
 	_waterTiles.push_back(lowerTile);
 	updatePeriphery(lowerTile);
-	_waterLevel = 1;
+	_waterLevel = MIN_WATER_LEVEL; //new water has min water level
 }
 
 // PERIPHERY FUNCTIONS
